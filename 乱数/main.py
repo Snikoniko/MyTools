@@ -29,11 +29,29 @@ def show():
 def add():
   for i in range(2):print()
   count = 0
-  count_second = 0
   dont_need_show = False
   loop = True
 
   print("キーを追加するならkey、値を追加するならvalue\nと半角英数字で打ってください")
+
+  while loop:
+    mode = input(">>")
+    
+    if mode == "key":
+      pass
+    
+    elif mode == "value":
+      pass
+    
+    else:
+      if count < 10:
+        print("指定したとおりに\nキーを追加するならkey\n値を追加するならvalueと半角英数字で打ってください")
+      elif count >= 10 and count < 20:
+        print("わざとですか？\n指定したとおりに\nキーを追加するならkey\n値を追加するならvalueと半角英数字で打ってください")
+      elif count == 20:
+        print("もうすねました\nさようなら")
+        program_stop
+      count +=1
 
 def program_stop():
   print("ーーーーーーーーーープログラム終了ーーーーーーーーーー")
