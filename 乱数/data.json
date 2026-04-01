@@ -1,1 +1,15 @@
-{"primary":["A","B","C"],"secondary":["D","E","F","G"]}
+{
+    "primary": [
+        "A",
+        "B",
+        "C",
+        "D"
+    ],
+    "secondary": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ]
+}
