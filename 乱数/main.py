@@ -154,11 +154,42 @@ def remove_key_value():
     mode = input(">>")
     
     if mode == "key":
-      pass
+      print("どのキーを削除しますか？")
+      while True:
+        input_key = input(">>")
+        if input_key in data:
+          del data[input_key]
+          with open("data.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+          print("キーを削除しました。")
+          loop = False
+          break
+        elif which_key == "show" and count > 0 and not(dont_need_show):
+          show()
+        elif not dont_need_show:
+          count += 1
+          if count < 10:
+            print("存在しないキーを指定しないでください\n既存のキーがわからないならshowと\n半角英数字で入力してください")
+          elif count >= 10 and count < 20:
+            print(f"わざとですか？存在しないキーを指定しないでください{count}")
+          elif count == 20:
+            print("もうすねました\nさようなら。")
+            program_stop
+        elif dont_need_show:
+          count += 1
+          if count < 10:
+            print("もうリストは表示してあるので\n存在しないキーを指定しないでください")
+          elif count >= 10 and count < 20:
+            print(f"わざとですか？\nもうリストは表示してあるので\n存在しないキーを指定しないでください{count}")
+          elif count == 20:
+            print("もうすねました\nさようなら。")
+            program_stop
+    
     elif mode == "value":
       print("どのキーの値を削除しますか？")
       while True:
         which_key = input(">>")
+        
         
         if which_key in data:
           print("削除する値を入力してください")
